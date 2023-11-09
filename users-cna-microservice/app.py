@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
-
+import sys
 from db.config import engine, Base
 from routers import user_router
 from fastapi import Depends
