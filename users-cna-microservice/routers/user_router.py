@@ -1,13 +1,17 @@
 from typing import List, Optional
 
 from fastapi import APIRouter, Depends
-
+from pydantic import BaseModel 
 from db.dals.user_dal import UserDAL
 from db.models.user import User
 from dependencies import get_user_dal
 
 router = APIRouter()
-
+class UserResponse(BaseModel):
+    id: int
+    name: str
+    email: str
+    mobile: str
 
 @router.post("/users")
 async def create_user(name: str, email: str, mobile: str, user_dal: UserDAL = Depends(get_user_dal)):
