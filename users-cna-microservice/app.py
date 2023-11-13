@@ -29,4 +29,4 @@ async def startup():
         
 
 if __name__ == '__main__':
-    uvicorn.run("app:app", port=9090, host='35.154.157.138', reload=True)
+    uvicorn.run("app:app", port=9090, host='0.0.0.0', reload=True)
